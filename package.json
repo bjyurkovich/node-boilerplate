@@ -1,0 +1,37 @@
+{
+  "name": "example-app",
+  "version": "0.0.1",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bjyurkovich/"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "watch": "nodemon -e js index.js "
+  },
+  "dependencies": {
+    "babel": "^5.8.21",
+    "body-parser": "^1.14.1",
+    "compression": "^1.6.0",
+    "cors": "^2.7.1",
+    "express": "^4.13.3",
+    "jwt-simple": "^0.4.0",
+    "lodash": "^3.10.1",
+    "moment": "^2.10.6",
+    "morgan": "^1.6.1",
+    "mysql": "^2.9.0",
+    "node-uuid": "^1.4.7",
+    "tv4": "^1.2.7"
+  },
+  "devDependencies": {
+    "nodemon": "^1.8.1"
+  },
+  "author": "BJ Yurkovich",
+  "license": "If you read the code or use the software, you die.",
+  "bugs": {
+    "url": "https://github.com/bjyurkovich"
+  },
+  "homepage": "https://example.com"
+}
