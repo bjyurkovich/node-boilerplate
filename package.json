@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "babel": "^5.8.21",
+    "babel-core": "^5.8.34",
     "body-parser": "^1.14.1",
     "compression": "^1.6.0",
     "cors": "^2.7.1",
@@ -26,6 +27,7 @@
     "tv4": "^1.2.7"
   },
   "devDependencies": {
+    "babel-core": "^6.3.15",
     "nodemon": "^1.8.1"
   },
   "author": "BJ Yurkovich",

@@ -17,18 +17,26 @@ export default {
 		if(token){
 			try{
 				
-				let decoded = jwt.decode(jwtTokenSecret);
-				decoded.exp <= Date.now() ? res.status(401).json({error: 'Token expired'}) : 
+				
+				var decoded = jwt.decode(token, jwtTokenSecret);
+				
 
-				q = 'SELECT * FROM User WHERE id=?';
-				db.connection.query(q, decoded.iss, (err, rows, fields) => {
+				decoded.exp <= Date.now() ? res.status(401).json({error: 'Token expired'}) : null;
+
+
+
+				let q = 'SELECT * FROM User WHERE id=?';
+				db.query(q, decoded.iss, (err, rows, fields) => {
 					!err && rows.length == 1 ? req.user = rows[0] : res.status(401, {error: 'Not Authorized', initiator: 'jwtAuth'});
-					return next()
+					return next();
 				})
 
 			}catch (err) {
+
+				console.log(err)
+
 				res.status(401).json({error:'Bad token'})
-				return
+				return;
 			}
 		}else{
 			res.status(401, {error: 'Token missing'});

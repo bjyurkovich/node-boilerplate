@@ -19,7 +19,7 @@ import auth from './middleware/auth'
 import Hola from './routes/Hola'
 import login from './routes/login'
 
-app.get('/hola/:name', Hola.sayHelloInMexican);
+app.get('/hola/:name', auth.jwtAuth, Hola.sayHelloInMexican);
 
 app.post('/login', login.login) 
 
